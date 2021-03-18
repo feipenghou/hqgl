@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hqgl.hib.po.Livemessage" table="livemessage" catalog="hq">
+        <id name="id" type="java.lang.String">
+            <column name="id" length="30" />
+        </id>
+        <property name="livep" type="java.lang.String">
+            <column name="livep" length="30" />
+        </property>
+        <property name="liveh" type="java.lang.String">
+            <column name="liveh" length="30" />
+        </property>
+        <property name="livecon" type="java.lang.String">
+            <column name="livecon" length="100" />
+        </property>
+        <property name="livezhu" type="java.lang.String">
+            <column name="livezhu" length="5" not-null="true" />
+        </property>
+        <property name="livere" type="java.lang.String">
+            <column name="livere" length="50" />
+        </property>
+        <property name="panduan" type="java.lang.String">
+            <column name="panduan" length="1" not-null="true" />
+        </property>
+        <property name="recon" type="java.lang.String">
+            <column name="recon" length="100" />
+        </property>
+        <property name="livetime" type="java.util.Date">
+            <column name="livetime" length="10" />
+        </property>
+        <property name="retime" type="java.util.Date">
+            <column name="retime" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

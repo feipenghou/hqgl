@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hqgl.hib.po.Car" table="car" catalog="hq">
+        <id name="id" type="java.lang.String">
+            <column name="id" length="30" />
+        </id>
+        <property name="pingpai" type="java.lang.String">
+            <column name="pingpai" length="30" />
+        </property>
+        <property name="style" type="java.lang.String">
+            <column name="style" length="30" />
+        </property>
+        <property name="price" type="java.lang.String">
+            <column name="price" length="15" />
+        </property>
+        <property name="color" type="java.lang.String">
+            <column name="color" length="30" />
+        </property>
+        <property name="count" type="java.lang.Integer">
+            <column name="count" />
+        </property>
+        <property name="people" type="java.lang.String">
+            <column name="people" length="15" />
+        </property>
+        <property name="baoxian" type="java.lang.String">
+            <column name="baoxian" length="3" />
+        </property>
+        <property name="weizhang" type="java.lang.String">
+            <column name="weizhang" length="30" />
+        </property>
+        <property name="youhao" type="java.lang.String">
+            <column name="youhao" length="30" />
+        </property>
+        <property name="jing" type="java.lang.String">
+            <column name="jing" length="30" />
+        </property>
+        <property name="shangbiao" type="java.lang.String">
+            <column name="shangbiao" length="300" />
+        </property>
+        <property name="shache" type="java.lang.String">
+            <column name="shache" length="10" />
+        </property>
+        <property name="jiasu" type="java.lang.String">
+            <column name="jiasu" length="5" />
+        </property>
+        <property name="panduan" type="java.lang.String">
+            <column name="panduan" length="1" />
+        </property>
+        <property name="beizhu" type="java.lang.String">
+            <column name="beizhu" length="50" />
+        </property>
+        <property name="shop" type="java.util.Date">
+            <column name="shop" length="10" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="image" length="30" />
+        </property>
+        <property name="jibie" type="java.lang.String">
+            <column name="jibie" length="10" />
+        </property>
+        <property name="shuxing" type="java.lang.String">
+            <column name="shuxing" length="10" />
+        </property>
+        <property name="zhuangtai" type="java.lang.String">
+            <column name="zhuangtai" length="10" not-null="true" />
+        </property>
+        <property name="carid" type="java.lang.String">
+            <column name="carid" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

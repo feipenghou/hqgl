@@ -1,0 +1,20 @@
+BODY {
+	COLOR: #DC385F;
+	BACKGROUND-COLOR:#F9F1F2;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+}
+.kuang{
+	float:left;
+	width:996px;
+	height:636px;
+	background:url(../image/log.jpg);
+	}
+.login{
+	width:245px;
+	height:200px;
+	float:right;
+	padding-top:310px;
+}
+

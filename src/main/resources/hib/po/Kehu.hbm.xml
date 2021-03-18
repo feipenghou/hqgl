@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hqgl.hib.po.Kehu" table="kehu" catalog="hq">
+        <id name="KNumber" type="java.lang.String">
+            <column name="k_number" length="30" />
+        </id>
+        <property name="KName" type="java.lang.String">
+            <column name="k_name" length="8" not-null="true" />
+        </property>
+        <property name="KSex" type="java.lang.String">
+            <column name="k_sex" length="2" not-null="true" />
+        </property>
+        <property name="KPhone" type="java.lang.String">
+            <column name="k_phone" length="11" not-null="true" />
+        </property>
+        <property name="KAddress" type="java.lang.String">
+            <column name="k_address" length="300" />
+        </property>
+        <property name="KTx" type="java.lang.String">
+            <column name="k_tx" length="500" />
+        </property>
+        <property name="KCareid" type="java.lang.String">
+            <column name="k_careid" length="18" />
+        </property>
+        <property name="KEmail" type="java.lang.String">
+            <column name="k_email" length="30" />
+        </property>
+        <property name="panduan" type="java.lang.String">
+            <column name="panduan" length="2" not-null="true" />
+        </property>
+        <property name="KDate" type="java.lang.String">
+            <column name="k_date" length="30" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

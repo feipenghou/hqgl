@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://10.130.30.32:3306/hq"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="mysql"></property>
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>/hib/po/User.hbm.xml</value>
+				<value>/hib/po/Notice.hbm.xml</value>
+				<value>/hib/po/Fuzhuang.hbm.xml</value>
+				<value>/hib/po/Kehu.hbm.xml</value>
+				<value>/hib/po/Car.hbm.xml</value>
+				<value>/hib/po/Livemessage.hbm.xml</value>
+				<value>/hib/po/Dingdan.hbm.xml</value>
+				<value>/hib/po/Tuidang.hbm.xml</value>
+				<value>/hib/po/Ygjbxxb.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="logindao" class="com.hqgl.hib.dao.impl.LoginDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="loginservice" class="com.hqgl.service.impl.LoginServiceImpl">
+		<property name="logindao">
+			<ref local="logindao"/>
+		</property>
+	</bean>
+	<bean id="loginaction" class="com.hqgl.action.LoginAction">
+		<property name="loginservice">
+			<ref local="loginservice"/>
+		</property>
+	</bean>
+	<bean id="ptdao" class="com.hqgl.hib.dao.impl.ptDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="ptservice" class="com.hqgl.service.impl.ptServiceImpl">
+		<property name="ptdao">
+			<ref local="ptdao"/>
+		</property>
+	</bean>
+	<bean id="ptaction" class="com.hqgl.action.ptAction">
+		<property name="ptservice">
+			<ref local="ptservice"/>
+		</property>
+	</bean>
+	<bean id="admindao" class="com.hqgl.hib.dao.impl.AdminDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="adminservice" class="com.hqgl.service.impl.AdminServiceImpl">
+		<property name="admindao">
+			<ref local="admindao"/>
+		</property>
+	</bean>
+	<bean id="adminaction" class="com.hqgl.action.AdminAction">
+		<property name="adminservice">
+			<ref local="adminservice"/>
+		</property>
+	</bean>
+	<bean id="ikehudao" class="com.hqgl.hib.dao.impl.IkehuDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="ikehuservice" class="com.hqgl.service.impl.IkehuServiceImpl">
+		<property name="ikehudao">
+			<ref local="ikehudao"/>
+		</property>
+	</bean>
+	<bean id="ikehuaction" class="com.hqgl.action.IkehuAction">
+		<property name="ikehuservice">
+			<ref local="ikehuservice"/>
+		</property>
+	</bean>
+
+	<bean id="cardao" class="com.hqgl.hib.dao.impl.CarDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="carservice" class="com.hqgl.service.impl.CarServiceImpl">
+		<property name="cardao">
+			<ref local="cardao"/>
+		</property>
+	</bean>
+	<bean id="caraction" class="com.hqgl.action.Caraction">
+		<property name="carservice">
+			<ref local="carservice"/>
+		</property>
+	</bean>
+
+	<bean id="messagedao" class="com.hqgl.hib.dao.impl.MessageDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="messageservice" class="com.hqgl.service.impl.MessageServiceImpl">
+		<property name="messagedao">
+			<ref local="messagedao"/>
+		</property>
+	</bean>
+	<bean id="messageaction" class="com.hqgl.action.MessageAction">
+		<property name="messageservice">
+			<ref local="messageservice"/>
+		</property>
+	</bean>
+	<bean id="iygdao" class="com.hqgl.hib.dao.impl.IygDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="iygservice" class="com.hqgl.service.impl.IygServiceImpl">
+		<property name="iygdao">
+			<ref local="iygdao"/>
+		</property>
+	</bean>
+	<bean id="iygaction" class="com.hqgl.action.IygAction">
+		<property name="iygservice">
+			<ref local="iygservice"/>
+		</property>
+	</bean>
+</beans>

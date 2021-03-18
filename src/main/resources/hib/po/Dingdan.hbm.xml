@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hqgl.hib.po.Dingdan" table="dingdan" catalog="hq">
+        <id name="DNumber" type="java.lang.String">
+            <column name="d_number" length="30" />
+        </id>
+        <property name="DName" type="java.lang.String">
+            <column name="d_name" length="30" not-null="true" />
+        </property>
+        <property name="DSex" type="java.lang.String">
+            <column name="d_sex" length="3" not-null="true" />
+        </property>
+        <property name="DRiqi" type="java.lang.String">
+            <column name="d_riqi" length="30" not-null="true" />
+        </property>
+        <property name="DCareid" type="java.lang.String">
+            <column name="d_careid" length="18" not-null="true" />
+        </property>
+        <property name="DAddress" type="java.lang.String">
+            <column name="d_address" length="30" not-null="true" />
+        </property>
+        <property name="DEmail" type="java.lang.String">
+            <column name="d_email" length="20" />
+        </property>
+        <property name="DPhone" type="java.lang.String">
+            <column name="d_phone" length="11" not-null="true" />
+        </property>
+        <property name="panduan" type="java.lang.String">
+            <column name="panduan" length="3" />
+        </property>
+    </class>
+</hibernate-mapping>

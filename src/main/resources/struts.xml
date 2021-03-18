@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="false"/>
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index"/>
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+        <!-- 登陆 -->
+        <action name="login" class="loginaction" method="login">
+            <result name="admin">admin.jsp</result>
+            <result name="pt">pt.jsp</result>
+            <result name="error">no.jsp</result>
+            <result name="no">err.jsp</result>
+        </action>
+        <!-- 公告管理 -->
+        <action name="notice_display" class="loginaction" method="notice_display">
+            <result name="success">notice/notice_display.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ppt" class="ptaction" method="gg">
+            <result name="success">notice/ptnotice_display.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="notice1" class="loginaction" method="notice_display">
+            <result name="success">main.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ptnotice1" class="ptaction" method="gg">
+            <result name="success">ptmain.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="notice_id1" class="loginaction" method="notice_id">
+            <result name="success">notice/notice_cha.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ptnotice_id1" class="ptaction" method="ptnotice_id">
+            <result name="success">notice/ptnotice_cha.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="notice_d" class="loginaction" method="notice_d">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="notice_id" class="loginaction" method="notice_id">
+            <result name="success">notice/notice_update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="notice_update" class="loginaction" method="notice_update">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="notice_add1" class="loginaction" method="admin_display">
+            <result name="success">notice/notice_add.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="notice_add" class="loginaction" method="notice_add">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!--管理员管理-->
+        <action name="admin_display" class="loginaction" method="admin_display">
+            <result name="success">fuzhuang/admin_display.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="upload1" class="adminaction" method="upload">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savePath">/upload</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="admin_add" class="adminaction" method="admin_add">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savepath">/upload</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="admin_id1" class="adminaction" method="admin_id">
+            <result name="success">fuzhuang/admin_cha.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="pt_id1" class="ptaction" method="pt_id">
+            <result name="success">fuzhuang/pt_cha.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="admin_id" class="adminaction" method="admin_id">
+            <result name="success">fuzhuang/admin_update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="admin_id2" class="adminaction" method="admin_id">
+            <result name="success">fuzhuang/mima.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="xgmm" class="adminaction" method="xgmm">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="admin_update" class="adminaction" method="admin_update">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="admin_d" class="adminaction" method="admin_d">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <!--礼服管理-->
+        <action name="upload" class="loginaction" method="upload">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savePath">/upload</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="fuzhuang_add" class="loginaction" method="fuzhuang_add">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savepath">/upload</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="fuzhuang_display" class="loginaction" method="fuzhuang_display">
+            <result name="success">fuzhuang/fuzhuang_display.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ptfuzhuang_display" class="ptaction" method="ptfuzhuang_display">
+            <result name="success">fuzhuang/ptfuzhuang_display.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="fuzhuang_update" class="loginaction" method="fuzhuang_update">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="fuzhuang_id1" class="loginaction" method="fuzhuang_id">
+            <result name="success">fuzhuang/fuzhuang_cha.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ptfuzhuang_id1" class="ptaction" method="ptfuzhuang_id">
+            <result name="success">fuzhuang/ptfuzhuang_cha.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="fuzhuang_id" class="loginaction" method="fuzhuang_id">
+            <result name="success">fuzhuang/fuzhuang_update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="fuzhuang_d" class="loginaction" method="fuzhuang_d">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 添加客户信息 -->
+        <action name="addkehuid" class="ikehuaction" method="addkehuid">
+            <result name="ok">kehuguanli/addkehu.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+        <action name="upload2" class="ikehuaction" method="upload">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savePath">/upload</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 客户信息查看 -->
+        <action name="kehumanage" class="ikehuaction" method="kehumanage">
+            <result name="success">kehuguanli/kehutiaojian.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 按条件查看客户信息 -->
+        <action name="kehutiaojian" class="ikehuaction" method="kehutiaojian">
+            <result name="ok">kehuguanli/kehutiao.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+        <!-- 查看客户具体信息 -->
+        <action name="kehujuti" class="ikehuaction" method="kehujuti">
+            <result name="ok">kehuguanli/kehujuti.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+        <!-- 修改客户信息 -->
+        <action name="updatekehuid" class="ikehuaction" method="updatekehuid">
+            <result name="ok">kehuguanli/updatekehu.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="updatekehu" class="ikehuaction" method="updatekehu">
+            <result name="ok">ok.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+        <!-- 删除客户信息 -->
+        <action name="detelekehu" class="ikehuaction" method="detelekehu">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 客服管理 -->
+        <action name="mess_id" class="messageaction" method="mess_id">
+            <result name="success">message/mess_update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="mess_update" class="messageaction" method="mess_update">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="mess_delete" class="messageaction" method="mess_delete">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="mess_del" class="messageaction" method="mess_del">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="mess" class="messageaction" method="mess">
+            <result name="success">message/mess.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="mess_add" class="messageaction" method="mess_add">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 花车管理 -->
+        <action name="car" class="caraction" method="car">
+            <result name="success">car/car.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ptcar" class="ptaction" method="ptcar">
+            <result name="success">car/ptcar.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="car_update" class="caraction" method="car_update">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="car_add" class="caraction" method="car_add">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savePath">/img</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="upload3" class="caraction" method="upload">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savePath">/img</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="car_delete" class="caraction" method="car_delete">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="car_del" class="caraction" method="car_del">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="car_id" class="caraction" method="car_id">
+            <result name="success">car/car_update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ptcar_id" class="ptaction" method="ptcar_id">
+            <result name="success">car/ptcar_update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="ift" class="caraction" method="ift">
+            <result name="success">car/find_car.jsp</result>
+            <result name="error">no.jsp</result>
+        </action>
+        <!--订单管理功能模块-->
+
+        <!--添加订单-->
+        <action name="tianjiadingdan" class="ikehuaction" method="tianjiadingdan">
+            <result name="ok">dingdan/adddingdan.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+        <action name="pttianjiadingdan" class="ptaction" method="pttianjiadingdan">
+            <result name="ok">dingdan/ptadddingdan.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+
+        <action name="tianjia" class="ikehuaction" method="tianjia">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="pttianjia" class="ptaction" method="pttianjia">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <!-- 查看订单信息 -->
+        <action name="dingdanmanage" class="ikehuaction" method="dingdanmanage">
+            <result name="success">dingdan/changkandingdan.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 查看订单具体信息 -->
+        <action name="dingdanjuti" class="ikehuaction" method="dingdanjuti">
+            <result name="ok">dingdan/dingdanjuti.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+        <!--添加订单-->
+        <action name="adddingdan" class="ikehuaction" method="adddingdan">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 删除订单 -->
+        <action name="deletedingdan" class="ikehuaction" method="deletedingdan">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <!-- 查看退单信息 -->
+        <action name="tuidanmanage" class="ikehuaction" method="tuidanmanage">
+            <result name="success">dingdan/chakantuidan.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 查看退单具体信息 -->
+        <action name="tuidanjuti" class="ikehuaction" method="tuidanjuti">
+            <result name="ok">dingdan/tuidanjuti.jsp</result>
+            <result name="no">error.jsp</result>
+        </action>
+        <!-- 员工信息管理 -->
+        <!-- 添加员工信息 -->
+        <action name="yg_add" class="iygaction" method="yg_add">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 批量添加员工信息 -->
+        <action name="ygpladd1" class="iygaction" method="ygpladd1">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <!-- 查询员工信息 -->
+        <action name="yg_display" class="iygaction" method="yg_display">
+            <result name="success">yggl/yg_display.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 查看员工信息 -->
+        <action name="yg_cha" class="iygaction" method="yg_cha">
+            <result name="success">yggl/yg_updatecha.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="yg_updateone" class="iygaction" method="yg_updateone">
+            <result name="success">yggl/yg_updateok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <!-- 修改员工信息 -->
+        <action name="yg_id" class="iygaction" method="yg_id">
+            <result name="success">yggl/yg_update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="yg_update" class="iygaction" method="yg_update">
+            <result name="success">yggl/yg_updateok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 删除员工信息（逻辑删除） -->
+        <action name="yg_delete" class="iygaction" method="yg_delete">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 批量删除员工信息（逻辑删除） -->
+        <action name="yg_d" class="iygaction" method="yg_d">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 恢复员工信息 -->
+        <action name="yg_huifu" class="iygaction" method="yg_huifu">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 批量恢复员工信息 -->
+        <action name="yg_h" class="iygaction" method="yg_h">
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!-- 查询已删员工信息 -->
+        <action name="yg_yishan" class="iygaction" method="yg_yishan">
+            <result name="success">yggl/yg_delete.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!--  删除员工信息（物理删除） -->
+        <action name="yg_deletecd" class="iygaction" method="yg_deletecd">
+            <result name="success">yggl/deleteok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <!--  批量删除员工信息（物理删除） -->
+        <action name="yg_deleteall" class="iygaction" method="yg_deleteall">
+            <result name="success">yggl/deleteok.jsp.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+
+    <include file="example.xml"/>
+</struts>

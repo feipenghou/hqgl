@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hqgl.hib.po.Ygjbxxb" table="ygjbxxb" catalog="hq">
+        <id name="yid" type="java.lang.Integer">
+            <column name="yid" />
+
+        </id>
+        <property name="yname" type="java.lang.String">
+            <column name="yname" length="10" />
+        </property>
+        <property name="yold" type="java.lang.String">
+            <column name="yold" length="20" />
+        </property>
+        <property name="yin" type="java.lang.String">
+            <column name="yin" length="20" />
+        </property>
+        <property name="yposition" type="java.lang.String">
+            <column name="yposition" length="30" />
+        </property>
+        <property name="ydepartment" type="java.lang.String">
+            <column name="ydepartment" length="30" />
+        </property>
+        <property name="ysex" type="java.lang.String">
+            <column name="ysex" length="2" />
+        </property>
+        <property name="yface" type="java.lang.String">
+            <column name="yface" length="20" />
+        </property>
+        <property name="yaddress" type="java.lang.String">
+            <column name="yaddress" length="30" />
+        </property>
+        <property name="ynowaddress" type="java.lang.String">
+            <column name="ynowaddress" length="30" />
+        </property>
+        <property name="yphone" type="java.lang.String">
+            <column name="yphone" length="30" />
+        </property>
+        <property name="luoji" type="java.lang.String">
+            <column name="luoji" length="10" />
+        </property>
+        <property name="yemail" type="java.lang.String">
+            <column name="yemail" length="30" />
+        </property>
+        <property name="beizhu" type="java.lang.String">
+            <column name="beizhu" length="1000" />
+        </property>
+        <property name="pass" type="java.lang.String">
+            <column name="pass" length="30" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
