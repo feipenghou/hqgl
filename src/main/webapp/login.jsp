@@ -13,7 +13,6 @@
 <div class="kuang">
     <div class="login">
         <form action="login.action" method="post">
-
             用户名：<input type="text" name="id" size="14" value="">
             <br><br>
             密&nbsp;&nbsp;&nbsp;码：<input type="password" name="pass" size="14" value="">
@@ -21,10 +20,8 @@
             验证码：<input name="yanzhengma" type="text" id="yanzhengma" size="5">
             <img src="yanzheng.jsp" id="pic">
             <br><br>
-            <input type="image" src="image/lu.jpg" style="height:29px;width:75px;"> &nbsp;&nbsp;<input type="image"
-                                                                                                       src="image/zhi.jpg"
-                                                                                                       style="height:29px;width:75px;">
-
+            <input type="image" src="image/lu.jpg" style="height:29px;width:75px;"> &nbsp;&nbsp;
+            <input type="image" src="image/zhi.jpg" style="height:29px;width:75px;">
         </form>
     </div>
 </div>
