@@ -13,8 +13,7 @@ public class Lsh {
 		DateFormat df=new SimpleDateFormat("yyyyMMdd");
 		String StrDate=df.format(new Date());
 		MaxNO=new FindMax().getMaxOn(id, table);
-		if(MaxNO==null)
-		{
+		if(MaxNO==null){
 			ids=StrDate+"00001";
 		}else{
 			String StrNo=MaxNO;
