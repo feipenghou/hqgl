@@ -5,7 +5,7 @@
 <html>
   <head>
     <title>My JSP 'yg_update.jsp' starting page</title>
-  <script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+  <script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
 	   <style>
 table {
 	font-size: 12px;

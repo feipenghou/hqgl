@@ -20,7 +20,7 @@ border-top: #f2c7da 1px solid;
 	border-left: #f2c7da 1px solid;
 }
 </style>
- <script type="text/javascript" src="notice/My97DatePicker/WdatePicker.js"></script></head>
+ <script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script></head>
   
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">	
   <%

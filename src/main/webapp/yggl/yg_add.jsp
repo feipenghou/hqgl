@@ -3,7 +3,6 @@
 <html>
   <head>
     <title>My JSP 'yg_add.jsp' starting page</title>
-  <script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
 	   <style>
 table {
 	font-size: 12px;
@@ -108,7 +107,7 @@ color: black;
  </script>
 	
 
-<script type="text/javascript" src="yggl/My97DatePicker/WdatePicker.js"></script></head>
+<script type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script></head>
 <!--  清除清缓存代码-->
 <% response.setHeader("Pragma","No-cache"); response.setHeader("Cache-Control","no-cache"); response.setDateHeader("Expires", 0); %>  
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">						
