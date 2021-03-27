@@ -28,46 +28,40 @@ border-top: #f2c7da 1px solid;
   		List list=(List)session.getAttribute("noticelist");
   		Notice notice=(Notice)list.get(0);
    %>
-			<table width="70%" cellspacing="0" align="center">
-				<tr >
-					<td colspan="4" align="center"
-						style="font-size:12px; height:35px;">
-						查看公告
-					</td>
-				</tr>
-					<tr >
-					<td width="15%" height="35" align="center">公告编号：</td>
-						<td width="35%" style="padding-left:20px;"><%=notice.getId()%></td>
-						<td width="15%" height="35" align="center">发布人姓名：</td>
-						<td width="35%" style="padding-left:20px;"><%=notice.getName()%></td>
-						</tr>
-						
-						<tr><td width="15%" height="35" align="center">
-						公告主题：</td><td colspan="4" width="55%" style="padding-left:20px;"><%=notice.getTitle()%></td></tr>
-						<tr><td width="15%" height="35" align="center">
-						发布时间：</td>
-						<td width="35%" style="padding-left:20px;"> <%=notice.getQtime() %></td>
-						<td width="15%" height="35" align="center">
-						结束时间：</td>
-						<td colspan="4" width="35%" style="padding-left:20px;"> <%=notice.getJtime() %></td>
-						
-						</tr>
-						
-							<tr><td  width="15%" height="90" align="center">
-					发布内容：</td>
-					<td colspan="4" width="55%" style="padding-left:20px;"><%=notice.getContent()%>
-						    
-					</td>
-				</tr>
-					<tr height="30px">
-					<td colspan="4" align="center">
-    <input type="button" onClick="location='notice_display.action'" style=" height:23px; width:50px;" value="返回"></input>
-				</tr>
-			</table>
-	
-   
-   
-   
-   
+	<table width="70%" cellspacing="0" align="center">
+		<tr >
+			<td colspan="4" align="center"
+				style="font-size:12px; height:35px;">
+				查看公告
+			</td>
+		</tr>
+		<tr >
+			<td width="15%" height="35" align="center">公告编号：</td>
+			<td width="35%" style="padding-left:20px;"><%=notice.getId()%></td>
+			<td width="15%" height="35" align="center">发布人姓名：</td>
+			<td width="35%" style="padding-left:20px;"><%=notice.getName()%></td>
+		</tr>
+		<tr>
+			<td width="15%" height="35" align="center">公告主题：</td>
+			<td width="35%" style="padding-left:20px;"><%=notice.getTitle()%></td>
+			<td width="15%" height="35" align="center">公告类型：</td>
+			<td width="35%" style="padding-left:20px;"><%=notice.getType()%></td>
+		</tr>
+		<tr>
+			<td width="15%" height="35" align="center">发布时间：</td>
+			<td width="35%" style="padding-left:20px;"> <%=notice.getQtime() %></td>
+			<td width="15%" height="35" align="center">结束时间：</td>
+			<td colspan="4" width="35%" style="padding-left:20px;"> <%=notice.getJtime() %></td>
+		</tr>
+		<tr>
+			<td  width="15%" height="90" align="center">发布内容：</td>
+			<td colspan="4" width="55%" style="padding-left:20px;"><%=notice.getContent()%></td>
+		</tr>
+		<tr height="30px">
+			<td colspan="4" align="center">
+				<input type="button" onClick="location='notice_display.action'" style=" height:23px; width:50px;" value="返回">
+			</td>
+		</tr>
+	</table>
   </body>
 </html>

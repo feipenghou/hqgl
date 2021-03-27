@@ -45,10 +45,9 @@
             <a href="javascript:window.location.replace(location)" target="main">刷新</a>
             <a href="javascript:history.go(1);">前进</a>
             <a href="javascript:history.go(-1);">后退</a>
-
             <a style="COLOR: #A02D48"
                onclick="if (confirm('确定要退出吗？')) return true; else return false;"
-               href="" target=_top>退出系统</a>
+               href="" target=_top>退出系统</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
         </td>
     </tr>

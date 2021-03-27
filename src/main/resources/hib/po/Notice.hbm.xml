@@ -29,8 +29,5 @@
         <property name="name" type="java.lang.String">
             <column name="name" length="8" not-null="true" />
         </property>
-        <property name="photo" type="java.lang.String">
-            <column name="photo" length="30" />
-        </property>
     </class>
 </hibernate-mapping>

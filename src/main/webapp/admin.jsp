@@ -12,7 +12,7 @@
     <frameset rows="*" cols="180,*" id="frame">
         <frame src="admin_menu.jsp" name="leftFrame" noresize="noresize" marginwidth="0" marginheight="0"
                frameborder="0" scrolling="auto">
-        <frame src="ptnotice1.action" name="main" marginwidth="0" marginheight="0" frameborder="0" scrolling="yes">
+        <frame src="notice1.action" name="main" marginwidth="0" marginheight="0" frameborder="0" scrolling="yes">
     </frameset>
     <frame src="bottom.jsp" noresize="noresize" frameborder="0" name="bootomFrame" marginwidth="0" marginheight="0"
            scrolling="no">

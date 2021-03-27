@@ -13,7 +13,7 @@ public class ptDaoImpl extends HibernateDaoSupport implements ptDao {
 		return this.getHibernateTemplate().find(hql);
 	}
 	public List gg() {
-		String hql="from Notice n order by n.qtime desc";
+		String hql="from Notice n where n.panduan='"+1+"' order by n.qtime desc";
 		return this.getHibernateTemplate().find(hql);
 	}
 	//根据id查看一条公告

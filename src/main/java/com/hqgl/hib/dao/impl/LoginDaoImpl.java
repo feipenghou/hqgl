@@ -20,7 +20,7 @@ public class LoginDaoImpl extends HibernateDaoSupport implements LoginDao {
 	}
 	//查看全部公告
 	public List notice_display() {
-		String hql="from Notice n order by n.qtime desc";
+		String hql="from Notice n where n.panduan='"+1+"' order by n.qtime desc";
 		return this.getHibernateTemplate().find(hql);
 	}
 	//根据id查看一条公告

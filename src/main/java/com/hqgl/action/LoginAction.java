@@ -195,7 +195,6 @@ public class LoginAction {
         } else {
             return "error";
         }
-
     }
 
     //É¾³ý¹«¸æ
@@ -203,9 +202,7 @@ public class LoginAction {
         List noticelist = this.getLoginservice().notice_id(aa[i]);
         Notice notice = (Notice) noticelist.get(0);
         notice.setPanduan("0");
-
         if (this.getLoginservice().notice_delete(notice)) {
-
             return "success";
         } else {
             return "error";
@@ -251,7 +248,6 @@ public class LoginAction {
 
 
     public String notice_d() {
-        Map request = (Map) ActionContext.getContext().get("request");
         try {
             for (int i = 0; i < aa.length; i++) {
                 this.i = i;
@@ -273,7 +269,6 @@ public class LoginAction {
         notice.setQtime(this.getQtime());
         notice.setTitle(this.getTitle());
         notice.setType(this.getType());
-        notice.setPhoto("img");
         notice.setPanduan("1");
         if (this.getLoginservice().notice_add(notice)) {
             return "success";

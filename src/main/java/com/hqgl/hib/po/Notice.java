@@ -13,8 +13,6 @@ public class Notice implements java.io.Serializable {
 	private String panduan;
 	private String type;
 	private String name;
-	private String photo;
-
 	// Constructors
 
 	/** default constructor */
@@ -30,8 +28,7 @@ public class Notice implements java.io.Serializable {
 
 	/** full constructor */
 	public Notice(String id, String title, String qtime, String jtime,
-			String content, String panduan, String type, String name,
-			String photo) {
+			String content, String panduan, String type, String name) {
 		this.id = id;
 		this.title = title;
 		this.qtime = qtime;
@@ -40,7 +37,6 @@ public class Notice implements java.io.Serializable {
 		this.panduan = panduan;
 		this.type = type;
 		this.name = name;
-		this.photo = photo;
 	}
 
 	// Property accessors
@@ -107,14 +103,6 @@ public class Notice implements java.io.Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getPhoto() {
-		return this.photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
 	}
 
 }
