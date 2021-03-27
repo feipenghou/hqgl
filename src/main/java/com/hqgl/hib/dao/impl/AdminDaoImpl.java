@@ -30,7 +30,7 @@ public class AdminDaoImpl extends HibernateDaoSupport implements AdminDao {
 	}
 	//É¾³ı¹ÜÀíÔ±
 	public boolean admin_delete(User user){
-		try{this.getHibernateTemplate().update(user);
+		try{this.getHibernateTemplate().delete(user);
 				return true;
 		}catch(Exception e){
 			return false;

@@ -18,9 +18,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		return false;
 	}	
 	</script>
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
   </head>
   <jsp:include page="kehumanage.jsp"/>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">	

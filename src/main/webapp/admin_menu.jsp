@@ -162,7 +162,7 @@
                         <IMG height=9 src="image/o.jpg" width=9>
                     </td>
                     <td>
-                        <a class=menuChild href="addkehuid.action?id=<%=user.getId() %>" target=main>客户资料添加</a>
+                        <a class=menuChild href="addkehuid.action?id=<%=user.getId() %>" target=main>添加</a>
                     </td>
                 </tr>
                 <tr height=20>

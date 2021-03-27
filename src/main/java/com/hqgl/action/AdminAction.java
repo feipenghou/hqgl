@@ -178,7 +178,6 @@ public class AdminAction {
 	 * 上传
 	 * */
 	public String upload() throws IOException{
-		System.out.println("dao");
 		//System.out.println(this.getTitle());
 		System.out.println(this.getUpload());
 		System.out.println(this.getUploadFileName());
@@ -201,33 +200,20 @@ public class AdminAction {
 	public String admin_add(){
 		User user=new User();
 		user.setAddress(this.getAddress()+this.getAddresss());
-		System.out.println(this.getAddress());
 		user.setBirthday(this.getBirthday());
-		System.out.println(this.getBirthday());
 		user.setEmail(this.getEmail());
-		System.out.println(this.getEmail());
 		user.setId(Lsh.getOn("id", "user"));
 		user.setJianjie(this.getJianjie());
-		System.out.println(this.getJianjie());
 		user.setMinzu(this.getMinzu());
-		System.out.println(this.getMinzu());
 		user.setName(this.getName());
-		System.out.println(this.getName());
 		user.setPanduan("1");
 		user.setPass(this.getPass());
-		System.out.println(this.getPass());
 		user.setPhone(this.getPhone());
-		System.out.println(this.getPhone());
 		user.setQq(this.getQq());
-		System.out.println(this.getQq());
 		user.setSex(this.getSex());
-		System.out.println(this.getSex());
 		user.setShengfen(this.getShengfen());
-		System.out.println(this.getShengfen());
 		user.setXueli(this.getXueli());
-		System.out.println(this.getXueli());
 		user.setPhoto(this.getUploadFileName());
-		System.out.println(this.getUploadFileName());
 		if(this.getAdminservice().admin_add(user)){
 			return "success";
 		}else{
@@ -240,39 +226,27 @@ public class AdminAction {
 		Map session=(Map) ActionContext.getContext().get("session");
 		if(adminlist.size()>0){
 			session.put("adminlist",adminlist );
-			return "success";}
-			else{
+			return "success";
+		}else{
 			return 	"error";
-			}
 		}
+	}
 	//修改管理员
 	public String admin_update(){
 		List adminlist=this.getAdminservice().admin_id(this.getId());
 		User user=(User)adminlist.get(0);
-		user.setAddress(this.getAddress());
-		System.out.println(this.getAddress());
+		user.setAddress(this.getAddress()+this.getAddresss());
 		user.setBirthday(this.getBirthday());
-		System.out.println(this.getBirthday());
 		user.setEmail(this.getEmail());
-		System.out.println(this.getEmail());
 		user.setJianjie(this.getJianjie());
-		System.out.println(this.getJianjie());
 		user.setMinzu(this.getMinzu());
-		System.out.println(this.getMinzu());
 		user.setName(this.getName());
-		System.out.println(this.getName());
 		user.setPass(this.getPass());
-		System.out.println(this.getPass());
 		user.setPhone(this.getPhone());
-		System.out.println(this.getPhone());
 		user.setQq(this.getQq());
-		System.out.println(this.getQq());
 		user.setSex(this.getSex());
-		System.out.println(this.getSex());
 		user.setShengfen(this.getShengfen());
-		System.out.println(this.getShengfen());
 		user.setXueli(this.getXueli());
-		System.out.println(this.getXueli());
 		if(this.getAdminservice().admin_update(user)){
 			return "success";}
 			else{
@@ -283,7 +257,6 @@ public class AdminAction {
 	public String admin_delete(){
 		List adminlist=this.getAdminservice().admin_id(aa[i]);
 		User user=(User)adminlist.get(0);
-		user.setPanduan("0");
 		if(this.getAdminservice().admin_delete(user)){
 			return "success";}
 			else{
@@ -309,17 +282,13 @@ public class AdminAction {
 		this.aa = aa;
 	}
 	public String admin_d(){
-		Map request=(Map) ActionContext.getContext().get("request");
 		try{
-			for(int i=0;i<aa.length;i++)
-			{
+			for(int i=0;i<aa.length;i++){
 				this.i=i;
 				admin_delete();
 			}	
 			return "success";
-		}
-		catch(Exception e)
-		{
+		}catch(Exception e){
 			return "error";
 		}
 	}
