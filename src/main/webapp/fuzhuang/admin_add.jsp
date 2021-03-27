@@ -3,13 +3,10 @@
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
-    <title>My JSP 'admin_add.jsp' starting page</title>
-
+    <title>admin_add.jsp</title>
     <style>
         table {
             font-size: 12px;
@@ -431,7 +428,6 @@
                 return false;
             }
         }
-
         <!-- 验证电子邮件地址 -->
         function isEmail(strEmail) {
             if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1)
@@ -440,19 +436,15 @@
                 alert("邮箱格式错误，请重新输入！");
         }
     </script>
-
     <script type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"
-      style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
 <div style="height:30px;font-size:12px;padding-top:30px;padding-left:30px;">当前位置:&gt;<strong>&gt;添加管理员</strong></div>
 <form action="../upload1.action" method="post" onsubmit="return texiao()" enctype="multipart/form-data">
     <table width="85%" cellspacing="0" align="center">
         <tr>
-            <td colspan="20" align="center" style="font-size:12px; height:35px;">
-                添加管理员信息
-            </td>
+            <td colspan="20" align="center" style="font-size:12px; height:35px;">添加管理员信息</td>
         </tr>
         <tr>
             <td width="15%" height="30" align="center">姓名：</td>
@@ -487,7 +479,6 @@
                 <option value="博士后">博士后</option>
                 <option value="硕士">硕士</option>
             </select></td>
-
             <td width="10%" height="30" align="center">出生日期：</td>
             <td width="10%"><input type="text" size="10" class="Wdate" onClick="WdatePicker()" name="birthday"></td>
             <td width="8%" height="30" align="center">密码：</td>
@@ -510,8 +501,7 @@
             <td width="10%" height="30" align="center">联系电话：</td>
             <td width="10%" style="padding-left:5px;"><input type="text" id="phone" size="12" name="phone"></td>
             <td width="10%" height="30" align="center">电子邮箱：</td>
-            <td width="10%" style="padding-left:5px;"><input type="text" onblur="isEmail(this.value)" id="a_email"
-                                                             size="12" name="email"></td>
+            <td width="10%" style="padding-left:5px;"><input type="text" onblur="isEmail(this.value)" id="a_email" size="12" name="email"></td>
             <td width="10%" height="30" align="center">QQ：</td>
             <td width="10%" style="padding-left:5px;"><input type="text" id="qq" size="12" name="qq"></td>
         </tr>

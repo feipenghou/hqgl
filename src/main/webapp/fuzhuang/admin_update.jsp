@@ -4,22 +4,17 @@
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
-    <title>My JSP 'admin_add.jsp' starting page</title>
-
+    <title>admin_update.jsp</title>
     <style>
         table {
             font-size: 12px;
             margin-top: 10px;
-
             border-right: #f2c7da 1px solid;
             border-bottom: #f2c7da 1px solid;
         }
-
         table td {
             border-top: #f2c7da 1px solid;
             border-left: #f2c7da 1px solid;
@@ -441,12 +436,10 @@
                 alert("邮箱格式错误，请重新输入！");
         }
     </script>
-
-    <script type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="./My97DatePicker/WdatePicker.js"></script>
 </head>
 
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"
-      style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
 <div style="height:30px;font-size:12px;padding-top:30px;padding-left:30px;">当前位置:&gt;<strong>&gt;修改管理员</strong></div>
 <form action="admin_update.action" method="post" onsubmit="return texiao()">
     <%
@@ -455,17 +448,13 @@
     %>
     <table width="85%" cellspacing="0" align="center">
         <tr>
-            <td colspan="20" align="center" style="font-size:12px; height:35px;">
-                修改管理员信息
-            </td>
+            <td colspan="20" align="center" style="font-size:12px; height:35px;">修改管理员信息</td>
         </tr>
         <tr>
             <td width="15%" height="30" align="center">编号：</td>
-            <td style="padding-left:20px;background-color:#cccccc;"><%=user.getId()%>
-            </td>
+            <td style="padding-left:20px;background-color:#cccccc;"><%=user.getId()%></td>
             <td width="10%" height="30" align="center">姓名：</td>
-            <td width="10%" style="padding-left:5px;"><input type="text" size="8" name="name"
-                                                             value="<%=user.getName() %>"></td>
+            <td width="10%" style="padding-left:5px;"><input type="text" size="8" name="name" value="<%=user.getName() %>"></td>
             <td width="10%" height="30" align="center">性别：</td>
             <td width="10%">
                 <input type="radio" name="sex" value="男" checked="checked"/>男
@@ -496,33 +485,26 @@
                 <option value="博士后">博士后</option>
                 <option value="硕士">硕士</option>
             </select></td>
-
             <td width="10%" height="30" align="center">出生日期：</td>
             <td width="10%">
                 <input type="text" size="10" class="Wdate" onClick="WdatePicker()" name="birthday" value="<%=user.getBirthday()%>">
             </td>
-
         </tr>
         <tr>
             <td width="15%" height="30" align="center">密码：</td>
-            <td width="10%" style="padding-left:5px;"><input type="password" size="12" value="<%=user.getPass()%>"
-                                                             name="pass"></td>
+            <td width="10%" style="padding-left:5px;"><input type="password" size="12" value="<%=user.getPass()%>" name="pass"></td>
             <td width="10%" height="30" align="center">身份证号：</td>
-            <td colspan="4" width="10%" style="padding-left:5px;"><input type="text" id="shengfen" size="18"
-                                                                         value="<%=user.getShengfen()%>"
-                                                                         name="shengfen"></td>
-
+            <td colspan="4" width="10%" style="padding-left:5px;">
+                <input type="text" id="shengfen" size="18" value="<%=user.getShengfen()%>" name="shengfen">
+            </td>
         </tr>
         <tr>
             <td width="15%" height="30" align="center">联系电话：</td>
-            <td width="10%" style="padding-left:5px;"><input type="text" id="phone" size="12" name="phone"
-                                                             value="<%=user.getPhone()%>"></td>
+            <td width="10%" style="padding-left:5px;"><input type="text" id="phone" size="12" name="phone" value="<%=user.getPhone()%>"></td>
             <td width="10%" height="30" align="center">电子邮箱：</td>
-            <td width="10%" style="padding-left:5px;"><input type="text" onblur="isEmail(this.value)" id="a_email"
-                                                             size="12" value="<%=user.getEmail()%>" name="email"></td>
+            <td width="10%" style="padding-left:5px;"><input type="text" onblur="isEmail(this.value)" id="a_email" size="12" value="<%=user.getEmail()%>" name="email"></td>
             <td width="10%" height="30" align="center">QQ：</td>
-            <td width="10%" style="padding-left:5px;"><input type="text" id="qq" size="12" name="qq"
-                                                             value="<%=user.getQq()%>"></td>
+            <td width="10%" style="padding-left:5px;"><input type="text" id="qq" size="12" name="qq" value="<%=user.getQq()%>"></td>
         </tr>
         <tr>
             <td width="15%" height="30" align="center">家庭住址：</td>
@@ -549,6 +531,5 @@
         </tr>
     </table>
 </form>
-
 </body>
 </html>
