@@ -63,7 +63,7 @@ public class LoginDaoImpl extends HibernateDaoSupport implements LoginDao {
 	}
 	//查看全部礼服
 	public List fuzhuang_display(){
-		String hql="from Fuzhuang n order by n.id asc";
+		String hql="from Fuzhuang n where n.panduan='1' order by n.id asc";
 		return this.getHibernateTemplate().find(hql);
 	}
 	//删除礼服
@@ -76,7 +76,7 @@ public class LoginDaoImpl extends HibernateDaoSupport implements LoginDao {
 	}
 	//根据id查看一条信息
 	public List fuzhuang_id(String id){
-		String hql="from Fuzhuang f where f.id='"+id+"' and f.panduan='"+1+"'";
+		String hql="from Fuzhuang f where f.id='"+id+"' and f.panduan='1'";
 		return this.getHibernateTemplate().find(hql);
 	}
 	//修改礼服

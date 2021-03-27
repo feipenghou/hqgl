@@ -23,12 +23,12 @@ public class ptDaoImpl extends HibernateDaoSupport implements ptDao {
 	}
 	//查看全部礼服
 	public List ptfuzhuang_display(){
-		String hql="from Fuzhuang n order by n.id asc";
+		String hql="from Fuzhuang n where n.panduan='1' order by n.id asc";
 		return this.getHibernateTemplate().find(hql);
 	}
 	//根据id查看一条礼服信息
 	public List ptfuzhuang_id(String id){
-		String hql="from Fuzhuang f where f.id='"+id+"'";
+		String hql="from Fuzhuang f where f.id='"+id+"' and f.panduan='1'";
 		return this.getHibernateTemplate().find(hql);
 	}
 	public List ptcar(){

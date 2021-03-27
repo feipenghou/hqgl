@@ -356,7 +356,6 @@ public class LoginAction {
     //fuzhuang±í
     private String jianjie;
     private String money;
-    private String mone;
     private String lipin;
     private String zhaopian;
 
@@ -384,14 +383,6 @@ public class LoginAction {
         this.money = money;
     }
 
-    public String getMone() {
-        return mone;
-    }
-
-    public void setMone(String mone) {
-        this.mone = mone;
-    }
-
     public String getLipin() {
         return lipin;
     }
@@ -406,7 +397,7 @@ public class LoginAction {
         fuzhuang.setId(Lsh.getOn("id", "fuzhuang"));
         fuzhuang.setJianjie(this.getJianjie());
         fuzhuang.setLipin(this.getLipin());
-        fuzhuang.setMoney(this.getMoney() + this.getMone());
+        fuzhuang.setMoney(this.getMoney());
         fuzhuang.setPhoto(this.getPhoto());
         fuzhuang.setPanduan("1");
         fuzhuang.setZhaopian(this.getUploadFileName());
