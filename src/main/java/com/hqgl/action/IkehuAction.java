@@ -363,8 +363,7 @@ public class IkehuAction {
 
     public String addkehu() {
         Kehu kehu = new Kehu();
-
-        kehu.setKNumber(this.getKNumber());
+        kehu.setKNumber(Lsh.getOn("k_number", "kehu"));
         kehu.setKName(this.getKName());
         kehu.setKSex(this.getKSex());
         kehu.setKCareid(this.getKCareid());
@@ -374,15 +373,6 @@ public class IkehuAction {
         kehu.setKTx(this.getUploadFileName());
         kehu.setKDate(this.getKDate());
         kehu.setPanduan("1");
-        System.out.println(this.getKNumber());
-        System.out.println(this.getKName());
-        System.out.println(this.getKSex());
-        System.out.println(this.getKCareid());
-        System.out.println(this.getKAddress());
-        System.out.println(this.getKEmail());
-        System.out.println(this.getKPhone());
-        System.out.println(this.getKDate());
-        System.out.println(this.getUploadFileName());
         if (this.getIkehuservice().addkehu(kehu)) {
             return "success";
         } else {
@@ -409,18 +399,6 @@ public class IkehuAction {
             return "error";
 
         }
-    }
-
-    //按条件查看客户信息
-    public String kehutiaojian() {
-        List kehutiaojianlist = (List) this.getIkehuservice().kehutiaojian(this.getKNumber(), this.getKDate());
-        Map session = (Map) ActionContext.getContext().get("session");
-        if (kehutiaojianlist.size() > 0) {
-            session.put("kehulist", kehutiaojianlist);
-
-            return "ok";
-        }
-        return "no";
     }
 
     //查看客户具体信息
@@ -454,17 +432,9 @@ public class IkehuAction {
         kehu.setKSex(this.getKSex());
         kehu.setKCareid(this.getKCareid());
         kehu.setKDate(this.getKDate());
-        kehu.setKAddress(this.getKAddress());
+        kehu.setKAddress(this.getKAddress() + this.getAddress());
         kehu.setKPhone(this.getKPhone());
         kehu.setKEmail(this.getKEmail());
-        System.out.println(this.getKNumber());
-        System.out.println(this.getKName());
-        System.out.println(this.getKSex());
-        System.out.println(this.getKCareid());
-        System.out.println(this.getKAddress());
-        System.out.println(this.getKEmail());
-        System.out.println(this.getKPhone());
-        System.out.println(this.getKDate());
         Map session = (Map) ActionContext.getContext().get("session");
         if (this.getIkehuservice().updatekehu(kehu)) {
             return "ok";

@@ -18,18 +18,12 @@ public class IygServiceImpl implements IygService {
 	public void setIygdao(IygDao iygdao) {
 		this.iygdao = iygdao;
 	}
-	
-	
+
 	//添加员工信息
 	public boolean yg_add(Ygjbxxb ygjbxxb) {
 		return this.getIygdao().yg_add(ygjbxxb);
 	}
 
-	//批量添加员工信息
-	public boolean yg_addall(Ygjbxxb ygjbxxb) {
-		return this.getIygdao().yg_addall(ygjbxxb);
-	}
-	
 	//查询员工信息
 	public List yg_display() {
 		return this.getIygdao().yg_display();

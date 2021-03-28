@@ -187,11 +187,6 @@
             <result name="success">kehuguanli/kehutiaojian.jsp</result>
             <result name="error">error.jsp</result>
         </action>
-        <!-- 按条件查看客户信息 -->
-        <action name="kehutiaojian" class="ikehuaction" method="kehutiaojian">
-            <result name="ok">kehuguanli/kehutiao.jsp</result>
-            <result name="no">error.jsp</result>
-        </action>
         <!-- 查看客户具体信息 -->
         <action name="kehujuti" class="ikehuaction" method="kehujuti">
             <result name="ok">kehuguanli/kehujuti.jsp</result>
@@ -337,11 +332,6 @@
         <!-- 员工信息管理 -->
         <!-- 添加员工信息 -->
         <action name="yg_add" class="iygaction" method="yg_add">
-            <result name="success">ok.jsp</result>
-            <result name="error">error.jsp</result>
-        </action>
-        <!-- 批量添加员工信息 -->
-        <action name="ygpladd1" class="iygaction" method="ygpladd1">
             <result name="success">ok.jsp</result>
             <result name="error">error.jsp</result>
         </action>

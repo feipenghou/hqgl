@@ -11,11 +11,9 @@
         table {
             font-size: 12px;
             margin-top: 10px;
-
             border-right: #f2c7da 1px solid;
             border-bottom: #f2c7da 1px solid;
         }
-
         table td {
             border-top: #f2c7da 1px solid;
             border-left: #f2c7da 1px solid;

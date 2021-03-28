@@ -193,9 +193,7 @@ public class IygAction {
 	
 	// 添加员工信息
 	public String yg_add() {
-
 		Ygjbxxb ygjbxxb = new Ygjbxxb();
-
 		ygjbxxb.setYid(this.getYid());
 		ygjbxxb.setYname(this.getYname());
 		ygjbxxb.setYsex(this.getYsex());
@@ -358,70 +356,6 @@ public class IygAction {
 	public void setFirstplluoji(String[] firstplluoji) {
 		this.firstplluoji = firstplluoji;
 	}
-
-
-	
-	// 批量添加员工信息
-	public String ygpladd1() {
-		try {
-			for (int i = 0; i < firstplid.length; i++) {
-				this.i = i;
-				yg_addall();
-			}
-			return "success";
-		} catch (Exception e) {
-			return "error";
-		}
-	}
-
-	public String yg_addall() {
-		Ygjbxxb ygjbxxb = new Ygjbxxb();
-		ygjbxxb.setYid(firstplid[i]);
-		ygjbxxb.setYname(firstplname[i]);
-		ygjbxxb.setYsex(firstplsex[i]);
-		ygjbxxb.setYold(firstplold[i]);
-		ygjbxxb.setYin(firstplyin[i]);
-		ygjbxxb.setYface(firstplface[i]);
-		ygjbxxb.setYdepartment(firstpldepartment[i]);
-		ygjbxxb.setYaddress(firstpladdress[i]);
-		ygjbxxb.setYnowaddress(firstplnowaddress[i]);
-		ygjbxxb.setYphone(firstplphone[i]);
-		ygjbxxb.setYemail(firstplemail[i]);
-		ygjbxxb.setYposition(firstplposition[i]);
-		ygjbxxb.setBeizhu(firstplbeizhu[i]);
-		ygjbxxb.setPass(firstplpass[i]);
-		
-		ygjbxxb.setLuoji("1");
-
-		 System.out.println(firstplid[i]);
-		 System.out.println(firstplname[i]);
-		 System.out.println(firstplsex[i]);
-		 System.out.println(firstplold[i]);
-		 System.out.println(firstplface[i]);
-		 System.out.println(firstpldepartment[i]);
-		 System.out.println(firstpladdress[i]);
-		 System.out.println(firstplnowaddress[i]);
-		 System.out.println(firstplphone[i]);
-		 System.out.println(firstplemail[i]);
-		System.out.println(firstplposition[i]);
-		System.out.println(firstplposition[i]);
-		 System.out.println(firstplpass[i]);
-		
-		ActionContext actionContext = ActionContext.getContext();
-		Map session = actionContext.getSession();
-		Map request = (Map) ActionContext.getContext().get("request");
-
-		if (this.getIygservice().yg_addall(ygjbxxb)) {
-			String m = "<script language='javascript'>alert('添加成功！');window.location.href='a_goodsfl_ck.action'; </script>";
-			session.put("m", m);
-			return "success";
-		} else {
-			return "error";
-		}
-	}
-
-	
-	
 
 	// 查看员工信息
 	public String yg_display() {

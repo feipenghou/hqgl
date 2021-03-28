@@ -1,13 +1,12 @@
 package com.hqgl.hib.dao.impl;
 
-import java.util.List;
-import com.hqgl.hib.po.Kehu;
+import com.hqgl.hib.dao.IkehuDao;
 import com.hqgl.hib.po.Dingdan;
+import com.hqgl.hib.po.Kehu;
 import com.hqgl.hib.po.Tuidang;
-
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.hqgl.hib.dao.IkehuDao;
+import java.util.List;
 
 public class IkehuDaoImpl extends HibernateDaoSupport implements IkehuDao {
     public List addkehuid(){
@@ -32,7 +31,6 @@ public class IkehuDaoImpl extends HibernateDaoSupport implements IkehuDao {
 //按条件查看客户信息
 	public List kehutiaojian(String KNumber,String KDate){
 		String hql="from Kehu k where k.KNumber='"+KNumber+"'  or k.KDate='"+KDate+"'";
-		System.out.println("123");
 		return  this.getHibernateTemplate().find(hql);
 	}
 	//查看客户具体信息

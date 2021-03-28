@@ -384,11 +384,10 @@
         window.onload = loadProvince;
     </script>
     <script type="text/javascript">
-        function texiao(form) {
+        function texiao() {
             var KNameValue = document.getElementById("KName").value;
             var KAddressValue = document.getElementById("KAddress").value;
             var KPhoneValue = document.getElementById("KPhone").value;
-            var KEmailValue = document.getElementById("KEmail").value;
             if (KNameValue.length == 0) {
                 alert("请输入姓名");
                 return false;
@@ -422,35 +421,27 @@
             else
                 alert("邮箱格式错误，请重新输入！");
         }
-
-
     </script>
-
-    <script src="js2/webcalendar.js" type="text/javascript"></script>
-    <script type="text/javascript" src="include/jquery.js"></script>
-    <script type="text/javascript" src="include/common.js"></script>
-    <script type="text/javascript" src="include/xheditor/xheditor-1.1.14-zh-cn.min.js"></script>
-    <script type="text/javascript">
-        $(pageInit);
-
-        function pageInit() {
-            $('#elm2').xheditor({tools: 'mfull'});
+    <style>
+        table {
+            font-size: 12px;
+            margin-top: 10px;
+            border-right: #f2c7da 1px solid;
+            border-bottom: #f2c7da 1px solid;
         }
-
-        function submitForm() {
-            $('#frmDemo').submit();
+        table td {
+            border-top: #f2c7da 1px solid;
+            border-left: #f2c7da 1px solid;
         }
-    </script>
+    </style>
+    <script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
 </head>
 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"
       style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
-
+<div style="height:30px;font-size:12px;padding-top:30px;padding-left:30px;">当前位置:&gt;<strong>&gt;添加客户</strong></div>
 <form action="upload2.action" method="post" onsubmit="return texiao()" enctype="multipart/form-data">
-    <table cellspacing="0" align="center" style=" height:380px;border-collapse: collapse; margin-top:35px;">
-        <%
-            String list = (String) session.getAttribute("kehu");
-        %>
+    <table cellspacing="0" align="center" width="70%">
         <tr>
             <td align="center" height="25" style="font-size:14px;
    					 font-weight:bold;" colspan="4">
@@ -458,83 +449,75 @@
             </td>
         </tr>
         <tr>
-            <td align="left" style="font-size:12px;" height="35">
-                客户编号
-            </td>
-            <td align="left" colspan="3"><input style="width:300px; height:25px;" type="text" value="<%=list %>"
-                                                name="KNumber" id="k_number"/>
-            </td>
-        </tr>
-        <tr>
-            <td align="left" style="font-size:12px;" height="35">
+            <td width="15%" align="center" height="35">
                 客户姓名
             </td>
-            <td align="left"><input type="text" name="KName" id="KName" style="width:110px; height:25px;"/>
+            <td width="25%" style="padding-left:10px;"><input type="text" name="KName" id="KName" style="width:110px; height:25px;"/>
             </td>
 
-            <td align="left" style="font-size:12px;" height="35px">
+            <td width="15%" align="center" height="35px">
                 客户性别
             </td>
-            <td align="left" colspan="1">
-                <select name="KSex" style="width:110px;">
+            <td width="25%" style="padding-left:10px;" colspan="1">
+                <select name="KSex" style="width:100px;">
                     <option>男</option>
                     <option>女</option>
                 </select>
             </td>
         </tr>
         <tr>
-            <td align="left" style="font-size:12px;" height="35px">
+            <td width="15%" align="center"  height="35px">
                 结婚日期
             </td>
-            <td align="left" colspan="0">
-                <input type="text" name="KDate" onClick="setDayHM(this,'yyyy年MM月dd日 hh时mm分ss秒',0,-150);"
-                       style=" width:110px;border:1px solid #999999;">
+            <td width="25%" style="padding-left:10px;">
+                <input type="text" size="10" name="KDate" class="Wdate"
+                       onClick="WdatePicker()">
             </td>
-            <td align="left" style="font-size:12px;" height="35px">
+            <td width="15%" align="center"  height="35px">
                 照片
             </td>
-            <td align="left">
+            <td width="25%" style="padding-left:10px;">
                 <input style="width:180px; height:25px;" type="file" name="upload"/>
             </td>
 
         </tr>
         <tr>
-            <td align="left" style="font-size:12px;" height="35">
+            <td width="15%" align="center"  height="35">
                 联系电话
             </td>
-            <td align="left">
+            <td width="25%" style="padding-left:10px;">
                 <input type="text" name="KPhone" id="KPhone" style="width:110px; height:25px;"/>
             </td>
-            <td align="left" style="font-size:12px;" height="35">
+            <td width="15%" align="center"  height="35">
                 家庭住址
             </td>
-            <td><select style="width:110px; height:25px;" id="province" name="KAddress" onchange="loadCity();">
-                <option value="0">--选择省份--</option>
-            </select>
+            <td width="25%" style="padding-left:10px;">
+                <select style="width:110px; height:25px;" id="province" name="KAddress" onchange="loadCity();">
+                    <option value="0">--选择省份--</option>
+                </select>
                 <select id="city" name="address">
                     <option value="0">--选择市城镇--</option>
                 </select>
             </td>
         </tr>
         <tr>
-            <td align="left" style="font-size:12px;" height="35">
+            <td width="15%" align="center"  height="35">
                 身份证号
             </td>
-            <td align="left">
+            <td width="25%" style="padding-left:10px;">
                 <input type="text" name="KCareid" style="width:150px; height:25px;"/>
             </td>
-            <td align="center" style="font-size:12px;" height="35">
+            <td width="15%" align="center"  height="35">
                 电子邮箱
             </td>
-            <td align="left">
-                <input type="text" name="KEmail" onblur="isEmail(this.value)" id="KEmail"
+            <td width="25%" style="padding-left:10px;">
+                <input type="text" name="KEmail"  onblur="isEmail(this.value)" id="KEmail"
                        style="width:150px; height:25px;"/>
             </td>
         </tr>
         <tr>
             <td align="center" height="30" colspan="4">
-                <input type="submit" style="height:25px; margin-right:40px" value="添加">
-                <input type="reset" style="height:25px;" value="重置">
+                <input type="submit" style="height:25px;" value="添加">
             </td>
         </tr>
     </table>

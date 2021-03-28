@@ -1,26 +1,15 @@
 package com.hqgl.hib.dao.impl;
 
-import java.util.List;
-
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-
 import com.hqgl.hib.dao.IygDao;
 import com.hqgl.hib.po.Ygjbxxb;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import java.util.List;
 
 public class IygDaoImpl extends HibernateDaoSupport implements IygDao {
 
 	//添加员工信息
-	public boolean  yg_add(Ygjbxxb ygjbxxb) {
-		try{
-			this.getHibernateTemplate().save(ygjbxxb);
-			return true;
-		}catch(Exception e){
-			return false;
-		}
-	}
-
-	//批量添加员工信息
-	public boolean  yg_addall(Ygjbxxb ygjbxxb) {
+	public boolean yg_add(Ygjbxxb ygjbxxb) {
 		try{
 			this.getHibernateTemplate().save(ygjbxxb);
 			return true;

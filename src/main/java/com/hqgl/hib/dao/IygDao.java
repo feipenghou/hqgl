@@ -8,11 +8,7 @@ public interface IygDao {
 	
 	//添加员工信息
 	public boolean  yg_add(Ygjbxxb ygjbxxb);
-	
-	//批量添加员工信息
-	public boolean  yg_addall(Ygjbxxb ygjbxxb);
-	
-	
+
 	//所根据的id
 	public List yg_id(int yid);
 
