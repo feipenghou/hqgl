@@ -369,19 +369,6 @@ public class IygAction {
 			return "error";
 		}
 	}
-
-	// 查看单个员工
-	public String yg_cha() {
-		Map request = (Map) ActionContext.getContext().get("request");
-		List list = this.getIygservice().yg_cha(this.getYid(),
-				this.getYname());
-		if (list.size() > 0) {
-			request.put("list", list);
-			return "success";
-		} else {
-			return "error";
-		}
-	}
   //修改员工信息
 	   public String yg_updateone() {
 		List list = this.getIygservice().yg_display();
@@ -427,8 +414,6 @@ public class IygAction {
 	public String yg_update() {
 		List onelist = this.getIygservice().yg_id(this.getYid());
 		Ygjbxxb ygjbxxb = (Ygjbxxb)onelist.get(0);
-
-
 		ygjbxxb.setYname(this.getYname());
 		ygjbxxb.setYsex(this.getYsex());
 		ygjbxxb.setYaddress(this.getYaddress());
@@ -441,7 +426,6 @@ public class IygAction {
 		ygjbxxb.setYphone(this.getYphone());
 		ygjbxxb.setYposition(this.getYposition());
 		ygjbxxb.setBeizhu(this.getBeizhu());
-System.out.println("1"+this.getBeizhu());
 		Map request = (Map) ActionContext.getContext().get("request");
 		if (this.getIygservice().yg_update(ygjbxxb)) {
 			request.put("onelist", onelist);

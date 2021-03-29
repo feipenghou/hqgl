@@ -107,7 +107,7 @@
             <td colspan="15" align="center">
                 <input type="submit" style=" height:23px; width:50px;" value="修改">
                 <input type="button" onClick="location='fuzhuang_display.action'" style=" height:23px; width:50px;"
-                       value="返回"></input>
+                       value="返回">
         </tr>
     </table>
 </form>

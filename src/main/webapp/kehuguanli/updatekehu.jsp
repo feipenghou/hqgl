@@ -409,7 +409,7 @@
 <form action="updatekehu.action" method="post">
     <table width="70%" cellspacing="0" align="center">
         <tr>
-            <td height="30" colspan="4" align="center"><span class="b">修改客户信息</td>
+            <td height="30" colspan="4" align="center"><span class="b">修改客户信息</span></td>
         </tr>
         <tr>
             <td width="18%" height="30" style="font-size:12px;" align="center">客户编号：</td>

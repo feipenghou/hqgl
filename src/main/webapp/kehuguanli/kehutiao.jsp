@@ -18,12 +18,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		return false;
 	}	
 	</script>
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
   </head>
-  <jsp:include page="workersxinxi.jsp"/>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">	 
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
    
     <table width="740" border="1" align="center" cellspacing="0" bordercolor="#f2c7da" style="border-collapse: collapse; text-align:center; font-size:12px;">
  	<tr height="30">
@@ -65,12 +61,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td width="80"><%=kehu.getKPhone() %></td>
 				<td width="100"><%=kehu.getKEmail() %></td>
 				<td width="110">
-				                <a href="kehujuti.action?KNumber=<%=kehu.getKNumber()%> ">[查看]</a>
-				                <a href="updatekehuid.action?KNumber=<%=kehu.getKNumber()%>  ">[修改]</a>
-				                <a href="detelekehu.action?KNumber=<%=kehu.getKNumber()%> " onclick="return del()">[删除]</a>
-				                
-				                
-			</td></tr>
+					<a href="kehujuti.action?KNumber=<%=kehu.getKNumber()%> ">[查看]</a>
+					<a href="updatekehuid.action?KNumber=<%=kehu.getKNumber()%>  ">[修改]</a>
+					<a href="detelekehu.action?KNumber=<%=kehu.getKNumber()%> " onclick="return del()">[删除]</a>
+				</td>
+			</tr>
 			<% 
     			}
    				}
@@ -109,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					    <a href="kehutiaojain.action?page=<%=maxPage%>">最后一页</a></td>
 			  </tr>
 			  <tr height="30">
-	          <td colspan="7" align="center"  style="font-size:12px;font-weight:bold;"><a href="kehumanage.action">显示所有客户信息</td>
+				  <td colspan="7" align="center"  style="font-size:12px;font-weight:bold;"><a href="kehumanage.action">显示所有客户信息</a></td>
 		  </tr>
 </table>
   </body>

@@ -15,9 +15,6 @@ public interface IygService {
 	//查询员工信息：
 	public List yg_display();
 	
-	//根据条件查看员工信息： 
-	public List yg_cha(int yid, String yname);
-	
 	//根据条件查询的修改
 	public boolean yg_updateone(Ygjbxxb ygjbxxb);
 	

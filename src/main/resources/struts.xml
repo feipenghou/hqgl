@@ -341,14 +341,8 @@
             <result name="success">yggl/yg_display.jsp</result>
             <result name="error">error.jsp</result>
         </action>
-        <!-- 查看员工信息 -->
-        <action name="yg_cha" class="iygaction" method="yg_cha">
-            <result name="success">yggl/yg_updatecha.jsp</result>
-            <result name="error">error.jsp</result>
-        </action>
-
         <action name="yg_updateone" class="iygaction" method="yg_updateone">
-            <result name="success">yggl/yg_updateok.jsp</result>
+            <result name="success">ok.jsp</result>
             <result name="error">error.jsp</result>
         </action>
 
@@ -359,7 +353,7 @@
         </action>
 
         <action name="yg_update" class="iygaction" method="yg_update">
-            <result name="success">yggl/yg_updateok.jsp</result>
+            <result name="success">ok.jsp</result>
             <result name="error">error.jsp</result>
         </action>
         <!-- 删除员工信息（逻辑删除） -->
@@ -389,12 +383,12 @@
         </action>
         <!--  删除员工信息（物理删除） -->
         <action name="yg_deletecd" class="iygaction" method="yg_deletecd">
-            <result name="success">yggl/deleteok.jsp</result>
+            <result name="success">ok.jsp</result>
             <result name="error">error.jsp</result>
         </action>
         <!--  批量删除员工信息（物理删除） -->
         <action name="yg_deleteall" class="iygaction" method="yg_deleteall">
-            <result name="success">yggl/deleteok.jsp.jsp</result>
+            <result name="success">ok.jsp</result>
             <result name="error">error.jsp</result>
         </action>
     </package>

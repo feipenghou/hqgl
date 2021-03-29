@@ -24,13 +24,6 @@ public class IygDaoImpl extends HibernateDaoSupport implements IygDao {
 		return this.getHibernateTemplate().find(hql);
 	}
 	
-	
-	//根据条件查看员工信息
-	public List yg_cha(int yid, String yname) {
-		String hql="from Ygjbxxb y where y.yid='"+yid+"'and y.yname='"+yname+"'";
-		return this.getHibernateTemplate().find(hql);
-	}
-
 	//根据条件修改员工信息
 	public boolean yg_updateone(Ygjbxxb ygjbxxb) {
 		try{

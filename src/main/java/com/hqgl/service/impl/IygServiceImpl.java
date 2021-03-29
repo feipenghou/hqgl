@@ -41,12 +41,6 @@ public class IygServiceImpl implements IygService {
 		return this.getIygdao().yg_update(ygjbxxb);
 	}
 
-	
-	//根据条件查询员工信息
-	public List yg_cha(int yid, String yname) {
-		return this.getIygdao().yg_cha(yid, yname);
-	}
-
 	//根据条件修改
 	public boolean yg_updateone(Ygjbxxb ygjbxxb) {
 		return this.getIygdao().yg_updateone(ygjbxxb);
