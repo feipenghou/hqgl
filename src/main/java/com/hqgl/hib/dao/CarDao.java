@@ -11,5 +11,4 @@ public interface CarDao {
 	public boolean car_update(Car car);
 	public boolean car_delete(Car car);
 	public boolean car_add(Car car);
-	public List ift(String id);
 }

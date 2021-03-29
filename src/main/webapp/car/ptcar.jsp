@@ -8,39 +8,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'look_gly.jsp' starting page</title>    
+    <title>My JSP 'look_gly.jsp' starting page</title>
 	<style>
-table {
-	font-size: 12px;
-	margin-top:5px;
-	border-top:#f2c7da 1px solid;
-	border-left:#f2c7da 1px solid;
-}
+		table {
+			font-size: 12px;
+			margin-top: 10px;
+			border-right: #f2c7da 1px solid;
+			border-bottom: #f2c7da 1px solid;
+		}
 
-table td {
-border-bottom:#f2c7da 1px solid;
-border-right: #f2c7da 1px solid;
-}
-#where{
-width:550px;
-height:30px;
-line-height:30px;
-font-size:12px;
-font-weight:bold;
-padding-left:30px
-}
-a{
-text-decoration:none;
-}
-</style>
-    <base href="<%=basePath%>">
+		table td {
+			border-top: #f2c7da 1px solid;
+			border-left: #f2c7da 1px solid;
+		}
+	</style>
   </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">	
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
+<div style="height:30px;font-size:12px;padding-top:30px;padding-left:30px;">当前位置:<strong>&gt;&gt;查看全部花车</strong></div>
   <form action="car_del.action" method="post">
-  <div style="height:30px;font-size:12px;padding-top:30px;padding-left:30px;">当前位置:&gt;<strong>&gt;查看全部花车</strong></div>
-   <table width="700" align="center" cellspacing="0">
+   <table width="85%" align="center" cellspacing="0">
 			<tr align="center" style="font-size:12px;">				
 				<td colspan="9" height="30" >查看花车</td>
 				</tr>
@@ -56,7 +42,7 @@ text-decoration:none;
 			</tr>
 			 <%
 		    	List aliuyanlist=(List)session.getAttribute("car");
-		    	String str=(String)request.getParameter("page");
+		    	String str= request.getParameter("page");
  				if(str==null||str.equals(""))
  				{
 	 				str="0";
@@ -81,7 +67,7 @@ text-decoration:none;
 		    			Car car=(Car)aliuyanlist.get(i);
 		    %>
 			<tr align="center" height="30" onMouseOver="this.bgColor='#F8EFF2'" onMouseOut="this.bgColor='#ffffff'">
-				<td width="8%" ><%=i+1%></td>
+				<td width="8%" ><%=car.getId()%></td>
 					<td width="10%" ><%=car.getPingpai()%></td>
 				<td width="15%"><%
     		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -104,7 +90,7 @@ text-decoration:none;
 		    			Car car=(Car)aliuyanlist.get(i);
 		    %>
 			<tr align="center" height="30" onMouseOver="this.bgColor='#F8EFF2'" onMouseOut="this.bgColor='#ffffff'">
-				<td width="8%" ><%=i+1%></td>
+				<td width="8%" ><%=car.getId()%></td>
 					<td width="10%" ><%=car.getPingpai()%></td>
 				<td width="15%"><%
     		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");

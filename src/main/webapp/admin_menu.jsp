@@ -235,7 +235,7 @@
                         <IMG height=9 src="image/o.jpg" width=9>
                     </td>
                     <td>
-                        <a class=menuChild href="car.action" target=main>查看花车</a>
+                        <a class=menuChild href="car/car_add.jsp" target=main>花车添加</a>
                     </td>
                 </tr>
                 <tr height=20>
@@ -243,7 +243,7 @@
                         <IMG height=9 src="image/o.jpg" width=9>
                     </td>
                     <td>
-                        <a class=menuChild href="car/car_add.jsp" target=main>花车添加</a>
+                        <a class=menuChild href="car.action" target=main>查看花车</a>
                     </td>
                 </tr>
                 <tr height=4>

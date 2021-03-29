@@ -8,50 +8,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
     <title>My JSP 'car_update.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 	<style>
-table {
-	font-size: 12px;
-	margin-top:10px;
-	border-top:#f2c7da 1px solid;
-	border-left:#f2c7da 1px solid;
-}
+		table {
+			font-size: 12px;
+			margin-top: 10px;
+			border-right: #f2c7da 1px solid;
+			border-bottom: #f2c7da 1px solid;
+		}
 
-table td {
-border-bottom:#f2c7da 1px solid;
-border-right: #f2c7da 1px solid;
-}
-#where{
-width:550px;
-height:30px;
-line-height:30px;
-font-size:12px;
-font-weight:bold;
-padding-left:30px
-}
-#where a{
-text-decoration:none;
-}
-</style>
+		table td {
+			border-top: #f2c7da 1px solid;
+			border-left: #f2c7da 1px solid;
+		}
+	</style>
   </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">	
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
+<div style="height:30px;font-size:12px;padding-top:30px;padding-left:30px;">当前位置:<strong>&gt;&gt;查看花车信息</strong></div>
    <% 
   		List list=(List)request.getAttribute("carid"); 
   		Car car=(Car)list.get(0);	
    %>
-   <form action="car_update.action" method="post">
- <table width="700"  cellspacing="0" align="center" >
+<form action="car_update.action" method="post">
+ <table width="85%" cellspacing="0" align="center" >
  				<tr>
  				<td align="center" height="30"  style="font-size:12px;"colspan="5">查看花车详细资料 
  				</td>
@@ -59,92 +38,87 @@ text-decoration:none;
  				<tr>
  				<td align="center" rowspan="3" width="100">基本信息</td>
  				<td align="center" height="30" width="80">
- 				编号</td><td align="center"><%=car.getId()%></td>
+ 				编号</td><td><%=car.getId()%></td>
 					<td align="center" height="30" width="80">
-					品牌</td><td align="center"><%=car.getPingpai()%>
+					品牌</td><td><%=car.getPingpai()%>
 					</td>
 					</tr>
 					<tr>
-					<td align="center" height="30">
-					购买时间</td><td align="center">
-					<%
-    		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-    		 %>
-    <%=sdf.format(car.getShop()) %>				
-					</td>
-					<td align="center" height="30">
-						司机</td><td align="center"><%=car.getPeople()%>
-					</td>
-					
+					<td align="center" height="30">购买时间</td>
+						<td><%SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");%>
+    						<%=sdf.format(car.getShop()) %>
+						</td>
+					<td align="center" height="30">司机</td>
+						<td><%=car.getPeople()%></td>
 					</tr>
 					<tr>
-					<td align="center" height="30">
-					容纳人数</td><td align="center">
-					<%=car.getCount()%>	人					
-					</td>
-					<td align="center" height="30">
-					车牌号码</td><td align="center">
-					<%=car.getCarid()%>						
-					</td>
+						<td align="center" height="30">容纳人数</td>
+						<td>
+						<%=car.getCount()%>	人
+						</td>
+						<td align="center" height="30">
+						车牌号码</td><td>
+						<%=car.getCarid()%>
+						</td>
 					</tr>					
 					<tr>
 					<td align="center" rowspan="6" width="100">详细信息</td>
  				<td align="center" height="30" width="80">
- 				 车型</td><td align="center"><%=car.getStyle()%></td>
+ 				 车型</td><td><%=car.getStyle()%></td>
 					<td align="center" height="30" >
-				颜色</td><td align="center"><%=car.getColor()%>
+				颜色</td><td><%=car.getColor()%>
 					</td>
 					</tr>
 					<tr>
 					<td align="center" height="30">
-				价格</td><td align="center">￥：&nbsp;&nbsp;<%=car.getPrice()%>万
+				价格</td><td>￥：&nbsp;&nbsp;<%=car.getPrice()%>万
 					</td>
 					<td align="center" height="30">
-				经销商</td><td align="center">
+				经销商</td><td>
 					<%=car.getJing()%>						
 					</td>
 					</tr>
 					<tr>
 					<td align="center" height="30">
-				油耗</td><td align="center">
+				油耗</td><td>
 					<%=car.getYouhao()%>&nbsp;L/百公里						
 					</td>
 					
 					<td align="center" height="30">
-				加速</td><td align="center">
+				加速</td><td>
 					<%=car.getJiasu()%>&nbsp;S				
 					</td>					
 					</tr>
 					<tr>
 					<td align="center" height="30">
-				刹车</td><td align="center">
+				刹车</td><td>
 					<%=car.getShache()%>&nbsp;S						
 					</td>
 					<td align="center" height="30">
-				保险</td><td align="center">
+				保险</td><td>
 					<%=car.getBaoxian()%>&nbsp;年						
 					</td>
 					</tr>
 					<tr>
 					<td align="center">违章记录</td>
-					<td align="center"><%=car.getWeizhang() %>次</td>				
+					<td><%=car.getWeizhang() %>次</td>
 					<td align="center" height="30">
-				状态</td><td align="center">
+				状态</td><td>
 				<%=car.getZhuangtai() %>
 					</td>
 						</tr>
-					<tr height="30"><td align="center">属性</td><td align="center"><%=car.getShuxing() %></td>
-					<td align="center">级别</td><td height="30" align="center"><%=car.getJibie()%>级</td>
+					<tr height="30"><td align="center">属性</td><td><%=car.getShuxing() %></td>
+					<td align="center">级别</td><td height="30"><%=car.getJibie()%>级</td>
 					</tr>
 					<tr height="165"><td align="center">汽车展示</td>
 					<td align="center">图片展示</td>
-					<td align="center"><IMAGE SRC="img/<%=car.getImage()%>"> </td>
+					<td><IMAGE SRC="img/<%=car.getImage()%>"/> </td>
 					<td align="center">汽车描述</td>
-					<td align="center"><IMAGE SRC="img/<%=car.getShangbiao()%>"></td>
+					<td><%=car.getShangbiao()%></td>
 					</tr>
 					<tr height="30">
 					<td align="center">备注</td>
-					<td colspan="4" align="center"> 
+					<td colspan="4">
 					<%=car.getBeizhu()%>
    					</td>
 					</tr>					
@@ -153,6 +127,7 @@ text-decoration:none;
 						<input type="button" style="height: 25px;" onClick="location='ptcar.action'" value="返回">
 					</td>
 				</tr>
-			</table><br>
-			</form>  </body>
+ </table>
+</form>
+</body>
 </html>

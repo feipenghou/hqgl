@@ -274,11 +274,9 @@ public class Caraction {
         List list = this.getCarservice().car_id(this.getId());
         Car car = (Car) list.get(0);
         car.setBeizhu(this.getBeizhu());
-        System.out.print("getBeizhu");
         car.setWeizhang(this.getWeizhang());
         car.setZhuangtai(this.getZhuangtai());
         car.setPeople(this.getPeople());
-        Map request = (Map) ActionContext.getContext().get("request");
         if (this.getCarservice().car_update(car)) {
             return "success";
         } else {
@@ -289,8 +287,7 @@ public class Caraction {
     public String car_delete() {
         List list = this.getCarservice().car_id(this.getId());
         Car car = (Car) list.get(0);
-        car.setPanduan("2");
-        Map request = (Map) ActionContext.getContext().get("request");
+        car.setPanduan("0");
         if (this.getCarservice().car_delete(car)) {
             return "success";
         } else {
@@ -299,7 +296,6 @@ public class Caraction {
     }
 
     public String car_del() {
-        Map request = (Map) ActionContext.getContext().get("request");
         try {
             for (int i = 0; i < aa.length; i++) {
                 this.i = i;
@@ -314,8 +310,7 @@ public class Caraction {
     public String car_d() {
         List list = this.getCarservice().car_id(aa[i]);
         Car car = (Car) list.get(0);
-        car.setPanduan("2");
-        Map request = (Map) ActionContext.getContext().get("request");
+        car.setPanduan("0");
         if (this.getCarservice().car_delete(car)) {
             return "success";
         } else {
@@ -429,16 +424,5 @@ public class Caraction {
         }
         upload = null;
         return car_add();
-    }
-
-    public String ift() {
-        List mp = this.getCarservice().ift(this.getId());
-        Map session = (Map) ActionContext.getContext().get("session");
-        if (mp.size() > 0) {
-            session.put("car", mp);
-            return "success";
-        } else {
-            return "error";
-        }
     }
 }

@@ -455,7 +455,6 @@
                 <select id="city" name="address">
                     <option value="0">--选择市城镇--</option>
                 </select>
-<%--                <input type="text" name="KAddress" value="<%=kehu.getKAddress()%>"/>--%>
             </td>
             <td width="10%" height="30" style="font-size:12px;" align="center">电子邮箱：</td>
             <td width="10%" height="30" style="font-size:12px;" align="left">

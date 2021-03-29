@@ -273,10 +273,6 @@
             <result name="success">car/ptcar_update.jsp</result>
             <result name="error">error.jsp</result>
         </action>
-        <action name="ift" class="caraction" method="ift">
-            <result name="success">car/find_car.jsp</result>
-            <result name="error">no.jsp</result>
-        </action>
         <!--订单管理功能模块-->
 
         <!--添加订单-->

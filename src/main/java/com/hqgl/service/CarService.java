@@ -1,8 +1,8 @@
 package com.hqgl.service;
 
-import java.util.List;
-
 import com.hqgl.hib.po.Car;
+
+import java.util.List;
 
 public interface CarService {
 	//花车服务
@@ -11,5 +11,4 @@ public interface CarService {
 	public boolean car_update(Car car);
 	public boolean car_delete(Car car);
 	public boolean car_add(Car car);
-	public List ift(String id);
 }

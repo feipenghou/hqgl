@@ -33,7 +33,4 @@ public class CarServiceImpl implements CarService {
 	public boolean car_add(Car car){
 		return this.getCardao().car_add(car);
 	}
-	public List ift(String id){
-		return this.getCardao().ift(id);
-	}
 }
