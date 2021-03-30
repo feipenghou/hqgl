@@ -484,7 +484,6 @@ public class IkehuAction {
 
     public String tianjia() {
         Dingdan dingdan = new Dingdan();
-
         dingdan.setDNumber(Lsh.getOn("d_number", "dingdan"));
         dingdan.setDName(this.getDName());
         dingdan.setDSex(this.getDSex());
@@ -494,14 +493,6 @@ public class IkehuAction {
         dingdan.setDPhone(this.getDPhone());
         dingdan.setDRiqi(this.getDRiqi());
         dingdan.setPanduan("1");
-        System.out.println(this.getDNumber());
-        System.out.println(this.getDName());
-        System.out.println(this.getDSex());
-        System.out.println(this.getDCareid());
-        System.out.println(this.getDAddress());
-        System.out.println(this.getDEmail());
-        System.out.println(this.getDPhone());
-        System.out.println(this.getDRiqi());
         if (this.getIkehuservice().tianjia(dingdan)) {
             return "success";
         } else {
@@ -548,14 +539,6 @@ public class IkehuAction {
         kehu.setKPhone(this.getKPhone());
         kehu.setKDate(this.getKDate());
         kehu.setPanduan("1");
-        System.out.println(this.getKNumber());
-        System.out.println(this.getKName());
-        System.out.println(this.getKSex());
-        System.out.println(this.getKCareid());
-        System.out.println(this.getKAddress());
-        System.out.println(this.getKEmail());
-        System.out.println(this.getKPhone());
-        System.out.println(this.getKDate());
         List list = this.getIkehuservice().dingdanjuti(this.getDNumber());
         Dingdan ding = (Dingdan) list.get(0);
         ding.setPanduan("0");
@@ -569,7 +552,6 @@ public class IkehuAction {
 //删除订单
 
     public String deletedingdan() {
-        Map session = (Map) ActionContext.getContext().get("session");
         Tuidang tuidang = new Tuidang();
         String kehu1 = Lsh.getOn("t_number", "tuidang");
         tuidang.setTNumber(kehu1);
@@ -581,20 +563,10 @@ public class IkehuAction {
         tuidang.setTPhone(this.getTPhone());
         tuidang.setTDate(this.getTDate());
         tuidang.setTBeizhu(this.getTBeizhu());
-
-        System.out.println(this.getTNumber());
-        System.out.println(this.getTName());
-        System.out.println(this.getTSex());
-        System.out.println(this.getTCareid());
-        System.out.println(this.getTAddress());
-        System.out.println(this.getTEmail());
-        System.out.println(this.getTPhone());
-        System.out.println(this.getTDate());
         List list = this.getIkehuservice().dingdanjuti(this.getDNumber());
         Dingdan dingdan = (Dingdan) list.get(0);
         dingdan.setPanduan("0");
         if (this.getIkehuservice().deletedingdan(tuidang, dingdan)) {
-            String m = "<script language='javascript'>alert('订单已取消！!');window.location.href='javascript:history.go(-1)';</script>";
             return "success";
         } else {
             return "error";
@@ -628,7 +600,6 @@ public class IkehuAction {
         Map session = (Map) ActionContext.getContext().get("session");
         if (tuidanjutilist.size() > 0) {
             session.put("tuidanjutilist", tuidanjutilist);
-
             return "ok";
         }
         return "no";

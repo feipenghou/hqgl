@@ -311,7 +311,7 @@
         </action>
         <!-- 删除订单 -->
         <action name="deletedingdan" class="ikehuaction" method="deletedingdan">
-            <result name="success">ok.jsp</result>
+            <result name="success">../ok.jsp</result>
             <result name="error">error.jsp</result>
         </action>
 

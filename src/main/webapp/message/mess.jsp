@@ -8,36 +8,20 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <base href="<%=basePath%>">
-
     <title>My JSP 'look_gly.jsp' starting page</title>
     <style>
         table {
             font-size: 12px;
-            border-top: #f2c7da 1px solid;
-            border-left: #f2c7da 1px solid;
-            margin-top: 5px;
+            margin-top: 10px;
+            border-right: #f2c7da 1px solid;
+            border-bottom: #f2c7da 1px solid;
         }
 
         table td {
-            border-bottom: #f2c7da 1px solid;
-            border-right: #f2c7da 1px solid;
-        }
-
-        #where {
-            width: 550px;
-            height: 30px;
-            line-height: 30px;
-            font-size: 12px;
-            font-weight: bold;
-            padding-left: 30px
-        }
-
-        #where a {
-            text-decoration: none;
+            border-top: #f2c7da 1px solid;
+            border-left: #f2c7da 1px solid;
         }
     </style>
-    <base href="<%=basePath%>">
     <script type="text/javascript">
         function del() {
             if (confirm("确定删除吗？")) {
@@ -56,7 +40,6 @@
                     }
                 }
             }
-
             document.getElementById('cancel').onclick = function () {
                 var obj = document.getElementsByTagName('input'); //获取文档中所有的input元素
                 for (var i = 0; i < obj.length; i++) {
@@ -69,17 +52,16 @@
         }
     </script>
 </head>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"
-      style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
-<div id="where">当前所在位置:>>留言信息操作</div>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f2c7da,endColorStr=#ffffff)">
+<div style="height:30px;font-size:12px;padding-top:30px;padding-left:30px;">当前位置:<strong>&gt;&gt;留言信息操作</strong></div>
 <form action="mess_del" method="post">
-    <table width="700" align="center" cellspacing="0">
+    <table width="85%" align="center" cellspacing="0">
         <tr align="center" style="font-size:12px;">
             <td height="30" colspan="6">我的留言</td>
         </tr>
         <tr align="center" style="font-size:12px;">
-            <td width="15%" height="30">编号</td>
             <td width="8%">选择</td>
+            <td width="15%" height="30">编号</td>
             <td width="12%">留言人</td>
             <td width="20%">留言时间</td>
             <td width="20%">状态</td>
@@ -87,7 +69,7 @@
         </tr>
         <%
             List list = (List) session.getAttribute("mess");
-            String str = (String) request.getParameter("page");
+            String str = request.getParameter("page");
             if (str == null || str.equals("")) {
                 str = "0";
             }
@@ -108,9 +90,8 @@
                     Livemessage livemessage = (Livemessage) list.get(i);
         %>
         <tr align="center" height="30" onMouseOver="this.bgColor='#F8EFF2'" onMouseOut="this.bgColor='#ffffff'">
-            <td width="15%"><%=i + 1%>
-            </td>
             <td width="8"><input type="checkbox" name="aa" value="<%=livemessage.getId()%>"/></td>
+            <td width="15%"><%=livemessage.getId()%></td>
             <td width="12%"><%=livemessage.getLivep()%>
             </td>
             <td width="20%"><%
@@ -120,8 +101,8 @@
             </td>
             <td width="20%"><%=livemessage.getLivezhu() %>
             </td>
-            <td width="25%"><a href="mess_id.action?id=<%=livemessage.getId()%>"/>|查看并回应|</a>
-                <a href="mess_delete.action?id=<%=livemessage.getId()%>" onclick="return del()">|删除|</a>
+            <td width="25%"><a href="mess_id.action?id=<%=livemessage.getId()%>"/>[查看并回应]</a>
+                <a href="mess_delete.action?id=<%=livemessage.getId()%>" onclick="return del()">[删除]</a>
             </td>
         </tr>
         <%
@@ -131,9 +112,8 @@
                 Livemessage livemessage = (Livemessage) list.get(i);
         %>
         <tr align="center" height="30" onMouseOver="this.bgColor='#F8EFF2'" onMouseOut="this.bgColor='#ffffff'">
-            <td width="15%"><%=i + 1%>
-            </td>
             <td width="8"><input type="checkbox" name="aa" value="<%=livemessage.getId()%>"/></td>
+            <td width="15%"><%=livemessage.getId()%></td>
             <td width="12%"><%=livemessage.getLivep()%>
             </td>
             <td width="20%"><%
@@ -143,15 +123,15 @@
             </td>
             <td width="20%"><%=livemessage.getLivezhu() %>
             </td>
-            <td width="25%"><a href="mess_id.action?id=<%=livemessage.getId()%>"/>|查看并回应|</a>
-                <a href="mess_delete.action?id=<%=livemessage.getId()%>" onclick="return del()">|删除|</a>
+            <td width="25%"><a href="mess_id.action?id=<%=livemessage.getId()%>"/>[查看并回应]</a>
+                <a href="mess_delete.action?id=<%=livemessage.getId()%>" onclick="return del()">[删除]</a>
             </td>
         </tr>
         <%
                 }
             }%>
         <tr>
-            <td colspan="10" style="border-right: #0099cc 1px solid;text-align:center;">
+            <td colspan="10" align="left" valign="middle" height="30">
                 <input type="button" id="xuanze" value="全选"/>
                 <input type="button" id="cancel" value="取消"/>
                 <input type="submit" value="多项删除" onclick="return del();"/>
