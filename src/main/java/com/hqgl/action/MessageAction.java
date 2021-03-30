@@ -114,7 +114,6 @@ public class MessageAction {
 		livemessage.setLivetime(new Date());
 		livemessage.setLivezhu("Î´¶Á");
 		livemessage.setPanduan("1");
-		Map request=(Map) ActionContext.getContext().get("request");
 		if(this.getMessageservice().mess_add(livemessage)){
 			return "success";
 		}
@@ -146,12 +145,9 @@ public class MessageAction {
 		List list=this.getMessageservice().mess_id(this.getId());
 		Livemessage livemessage=(Livemessage)list.get(0);
 		livemessage.setLivere(this.getLivere());
-		System.out.print(this.getLivere());
 		livemessage.setLivezhu("ÒÑ¶Á");
 		livemessage.setRetime(new Date());
-		System.out.print(this.getRetime());
-		Map request=(Map) ActionContext.getContext().get("request");
-		if (this.getMessageservice().mess_update(livemessage)) {	
+		if (this.getMessageservice().mess_update(livemessage)) {
 			return "success";
 		}else{		
 			return "error";
@@ -161,8 +157,7 @@ public class MessageAction {
 		List list=this.getMessageservice().mess_id(this.getId());
 		Livemessage livemessage=(Livemessage)list.get(0);
 		livemessage.setPanduan("0");
-		Map request=(Map) ActionContext.getContext().get("request");
-		if (this.getMessageservice().mess_delete(livemessage)) {	
+		if (this.getMessageservice().mess_delete(livemessage)) {
 			return "success";
 		}else{		
 			return "error";
@@ -188,8 +183,7 @@ public class MessageAction {
 		List list=this.getMessageservice().mess_id(aa[i]);
 		Livemessage livemessage=(Livemessage)list.get(0);
 		livemessage.setPanduan("0");
-		Map request=(Map) ActionContext.getContext().get("request");
-		if (this.getMessageservice().mess_delete(livemessage)) {	
+		if (this.getMessageservice().mess_delete(livemessage)) {
 			return "success";
 		}
 		else

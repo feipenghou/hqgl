@@ -412,12 +412,6 @@ public class ptAction {
      * 上传
      * */
     public String upload() throws IOException {
-        System.out.println("dao");
-        //System.out.println(this.getTitle());
-        System.out.println(this.getUpload());
-        System.out.println(this.getUploadFileName());
-        System.out.println(this.getUploadContentType());
-        System.out.println(this.getSavePath());
 //		以服务器的文件保存地址和原文件名建立上传文件输出流
         FileOutputStream fos = new FileOutputStream(getSavePath() + "\\" + this.getUploadFileName());
 //		以上传文件建立一个文件上传流
@@ -444,15 +438,6 @@ public class ptAction {
         kehu.setKTx(this.getUploadFileName());
         kehu.setKDate(this.getKDate());
         kehu.setPanduan("1");
-        System.out.println(this.getKNumber());
-        System.out.println(this.getKName());
-        System.out.println(this.getKSex());
-        System.out.println(this.getKCareid());
-        System.out.println(this.getKAddress());
-        System.out.println(this.getKEmail());
-        System.out.println(this.getKPhone());
-        System.out.println(this.getKDate());
-        System.out.println(this.getUploadFileName());
         if (this.getPtservice().ptaddkehu(kehu)) {
             return "success";
         } else {
@@ -482,14 +467,6 @@ public class ptAction {
         dingdan.setDPhone(this.getDPhone());
         dingdan.setDRiqi(this.getDRiqi());
         dingdan.setPanduan("1");
-        System.out.println(this.getDNumber());
-        System.out.println(this.getDName());
-        System.out.println(this.getDSex());
-        System.out.println(this.getDCareid());
-        System.out.println(this.getDAddress());
-        System.out.println(this.getDEmail());
-        System.out.println(this.getDPhone());
-        System.out.println(this.getDRiqi());
         if (this.getPtservice().pttianjia(dingdan)) {
             return "success";
         } else {

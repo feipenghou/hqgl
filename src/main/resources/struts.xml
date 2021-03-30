@@ -91,6 +91,13 @@
             <result name="success">ok.jsp</result>
             <result name="error">error.jsp</result>
         </action>
+        <!--普通用户添加-->
+        <action name="uploadpt" class="adminaction" method="uploadpt">
+            <!-- 动态设置Action的属性值 -->
+            <param name="savePath">/upload</param>
+            <result name="success">ok.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
         <action name="admin_add" class="adminaction" method="admin_add">
             <!-- 动态设置Action的属性值 -->
             <param name="savepath">/upload</param>

@@ -341,12 +341,6 @@ public class IkehuAction {
      * 上传
      * */
     public String upload() throws IOException {
-        System.out.println("dao");
-        //System.out.println(this.getTitle());
-        System.out.println(this.getUpload());
-        System.out.println(this.getUploadFileName());
-        System.out.println(this.getUploadContentType());
-        System.out.println(this.getSavePath());
 //	以服务器的文件保存地址和原文件名建立上传文件输出流
         FileOutputStream fos = new FileOutputStream(getSavePath() + "\\" + this.getUploadFileName());
 //	以上传文件建立一个文件上传流
@@ -435,7 +429,6 @@ public class IkehuAction {
         kehu.setKAddress(this.getKAddress() + this.getAddress());
         kehu.setKPhone(this.getKPhone());
         kehu.setKEmail(this.getKEmail());
-        Map session = (Map) ActionContext.getContext().get("session");
         if (this.getIkehuservice().updatekehu(kehu)) {
             return "ok";
         } else {
@@ -543,13 +536,12 @@ public class IkehuAction {
         Dingdan ding = (Dingdan) list.get(0);
         ding.setPanduan("0");
         if (this.getIkehuservice().adddingdan(kehu, ding)) {
-            String m = "<script language='javascript'>alert('客户已保存成功！!');window.location.href='javascript:history.go(-1)';</script>";
             return "success";
         } else {
             return "error";
         }
     }
-//删除订单
+    //删除订单
 
     public String deletedingdan() {
         Tuidang tuidang = new Tuidang();

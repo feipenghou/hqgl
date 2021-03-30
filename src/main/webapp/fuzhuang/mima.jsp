@@ -84,7 +84,7 @@
     </tr>
     <tr>
         <td align="center" colspan="2">
-            <input type="submit" style="height: 20px; width:75px" value="保存" onclick="return del();">
+            <input type="submit" style="height: 25px; width:70px" value="保存" onclick="return del();">
         </td>
     </tr>
 </table>

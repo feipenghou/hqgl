@@ -332,12 +332,6 @@ public class LoginAction {
      * 上传
      * */
     public String upload() throws IOException {
-        System.out.println("dao");
-        //System.out.println(this.getTitle());
-        System.out.println(this.getUpload());
-        System.out.println(this.getUploadFileName());
-        System.out.println(this.getUploadContentType());
-        System.out.println(this.getSavePath());
 //		以服务器的文件保存地址和原文件名建立上传文件输出流
         FileOutputStream fos = new FileOutputStream(getSavePath() + "\\" + this.getUploadFileName());
 //		以上传文件建立一个文件上传流

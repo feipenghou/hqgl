@@ -32,11 +32,11 @@ public class ptDaoImpl extends HibernateDaoSupport implements ptDao {
 		return this.getHibernateTemplate().find(hql);
 	}
 	public List ptcar(){
-		String hql="from Car n order by n.id asc";
+		String hql="from Car n where n.panduan='1' order by n.id asc";
 		return this.getHibernateTemplate().find(hql);
 	}
 	public List ptcar_id(String id){
-		String hql="from Car a where a.id='"+id+"'";
+		String hql="from Car a where a.id='"+id+"' and a.panduan='1'";
 		return this.getHibernateTemplate().find(hql);
 	}
 	//添加订单

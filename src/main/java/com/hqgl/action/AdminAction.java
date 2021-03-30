@@ -178,11 +178,6 @@ public class AdminAction {
 	 * 上传
 	 * */
 	public String upload() throws IOException{
-		//System.out.println(this.getTitle());
-		System.out.println(this.getUpload());
-		System.out.println(this.getUploadFileName());
-		System.out.println(this.getUploadContentType());
-		System.out.println(this.getSavePath());
 //		以服务器的文件保存地址和原文件名建立上传文件输出流
 		FileOutputStream fos=new FileOutputStream(getSavePath()+"\\"+this.getUploadFileName());
 //		以上传文件建立一个文件上传流
@@ -194,10 +189,25 @@ public class AdminAction {
 			fos.write(buffer,0,len);
 			}
 		upload=null;
-		return admin_add();
+		return admin_add("1");
 	}
+	public String uploadpt() throws IOException{
+//		以服务器的文件保存地址和原文件名建立上传文件输出流
+		FileOutputStream fos=new FileOutputStream(getSavePath()+"\\"+this.getUploadFileName());
+//		以上传文件建立一个文件上传流
+		FileInputStream fis=new FileInputStream(getUpload());
+//		将上传文件的内容写入服务器
+		byte[] buffer=new byte[1024];
+		int len=0;
+		while((len=fis.read(buffer))>0){
+			fos.write(buffer,0,len);
+			}
+		upload=null;
+		return admin_add("0");
+	}
+
 	//添加管理员 
-	public String admin_add(){
+	public String admin_add(String panduan){
 		User user=new User();
 		user.setAddress(this.getAddress()+this.getAddresss());
 		user.setBirthday(this.getBirthday());
@@ -206,7 +216,7 @@ public class AdminAction {
 		user.setJianjie(this.getJianjie());
 		user.setMinzu(this.getMinzu());
 		user.setName(this.getName());
-		user.setPanduan("1");
+		user.setPanduan(panduan);
 		user.setPass(this.getPass());
 		user.setPhone(this.getPhone());
 		user.setQq(this.getQq());
